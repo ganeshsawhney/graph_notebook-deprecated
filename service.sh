@@ -19,4 +19,6 @@ else
 fi
 echo "c.NotebookApp.allow_remote_access = True" >> ~/.jupyter/jupyter_notebook_config.py
 
-jupyter notebook --ip='*' --port ${NOTEBOOK_PORT} ~/SageMaker/ --allow-root > jupyterserver.log
+nohup jupyter notebook --ip='*' --port ${NOTEBOOK_PORT} ~/SageMaker/ --allow-root > jupyterserver.log &
+nohup jupyter lab --ip='*' --port ${LAB_PORT} ~/SageMaker/ --allow-root > jupyterlab.log &
+tail -f /dev/null

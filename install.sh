@@ -16,7 +16,7 @@ elif [ `curl -s 169.254.169.254/latest/meta-data/services/partition/` == 'aws' ]
         pipargs=''
 else
     echo "Unable to determine region！";
-    exit 1;
+    pipargs=''
 fi
 tar -zxvf ~/graph_notebook.tar.gz
 
